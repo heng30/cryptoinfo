@@ -1,0 +1,34 @@
+[package]
+name = "cryptoinfo"
+build = "build.rs"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+log.workspace = true
+cstr.workspace = true
+image.workspace = true
+qrcode.workspace = true
+chrono.workspace = true
+fs_extra.workspace = true
+clipboard.workspace = true
+modeldata.workspace = true
+env_logger.workspace = true
+serde_json.workspace = true
+crypto-hash.workspace = true
+lazy_static.workspace = true
+qmetaobject.workspace = true
+platform-dirs.workspace = true
+
+tokio = { workspace = true, features = ["full"] }
+reqwest = { workspace = true, features = ["json"] }
+qttypes = { workspace = true, features = ["qtquick"] }
+serde = { workspace = true, features = ["serde_derive"] }
+
+[build-dependencies]
+duct.workspace = true
+semver.workspace = true
+cpp_build.workspace = true
+
+[target.'cfg(target_os = "windows")'.build-dependencies]
+embed-resource.workspace = true

@@ -1,0 +1,8 @@
+[package]
+name = "modeldata"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+qttypes = { workspace = true, features = ["qtquick"] }
+qmetaobject.workspace = true
