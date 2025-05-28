@@ -13,8 +13,8 @@
 - Rust
 
 ### 编译 && 运行
-- make build
-- make run
+- make
+- make debug
 
 ### 参考
 - [Writing a QML Application in Rust](https://dev.to/ayush1325/writing-a-qml-application-in-rust-part-1-3pgi)

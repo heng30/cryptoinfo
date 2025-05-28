@@ -13,8 +13,8 @@
 - Rust
 
 ### Compilation && Running
-- make build
-- make run
+- make
+- make debug
 
 ### Reference
 - [Writing a QML Application in Rust](https://dev.to/ayush1325/writing-a-qml-application-in-rust-part-1-3pgi)
