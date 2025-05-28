@@ -475,7 +475,7 @@ dependencies = [
 
 [[package]]
 name = "cryptoinfo"
-version = "1.9.2"
+version = "1.0.0"
 dependencies = [
  "chrono",
  "clipboard",
@@ -1248,7 +1248,7 @@ dependencies = [
 
 [[package]]
 name = "modeldata"
-version = "1.9.2"
+version = "1.0.0"
 dependencies = [
  "qmetaobject",
  "qttypes",
