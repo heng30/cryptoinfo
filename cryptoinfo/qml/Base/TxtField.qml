@@ -7,10 +7,12 @@ TextField {
     property bool showBorder: true
     property color bgColor: "transparent"
     property alias tipText: tip.text
-    property real borderWidth: 1
+    property real borderWidth: theme.borderWidth
     property bool showTip: false
 
     padding: 0
+    leftPadding: theme.itemPadding
+    rightPadding: theme.itemPadding
     color: theme.fontColor
     verticalAlignment: TextInput.AlignVCenter
     font.pixelSize: theme.fontPixelNormal
@@ -28,5 +30,4 @@ TextField {
         border.color: theme.borderColor
         color: txtField.bgColor
     }
-
 }

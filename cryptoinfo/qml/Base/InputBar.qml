@@ -10,8 +10,8 @@ Rectangle {
     property bool showBorder: true
     property alias textInput: textInput
 
-    signal editingFinished()
-    signal accepted()
+    signal editingFinished
+    signal accepted
 
     function forceFocus() {
         textInput.forceActiveFocus();
@@ -46,5 +46,4 @@ Rectangle {
         text: textInput.text.length > 0 ? "" : underText
         textColor: theme.underFontColor
     }
-
 }

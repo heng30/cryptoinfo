@@ -17,8 +17,8 @@ Item {
     property alias readOnly: txtField.readOnly
 
     signal boxActived(int index)
-    signal editingFinished()
-    signal textAccepted()
+    signal editingFinished
+    signal textAccepted
 
     width: row.width
     height: row.height
@@ -44,7 +44,7 @@ Item {
             onEditingFinished: root.editingFinished()
             onAccepted: {
                 txtField.focus = false;
-                root.textAccepted()
+                root.textAccepted();
             }
         }
 
@@ -54,7 +54,5 @@ Item {
             width: root.boxWidth
             onActivated: root.boxActived(index)
         }
-
     }
-
 }
