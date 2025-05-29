@@ -1,7 +1,7 @@
 import QtQuick 2.15
 import QtQml 2.15
 import QtQuick.Controls 2.15
-import QtGraphicalEffects 1.15
+import QtQuick.Effects
 import "qrc:/res/qml/Base" as Base
 
 Popup {
@@ -41,13 +41,6 @@ Popup {
             anchors.verticalCenter: parent.verticalCenter
             fillMode: Image.PreserveAspectFit
             source: msgTip.isWarnMsg ? "qrc:/res/image/warn.png" : "qrc:/res/image/info.png"
-
-            ColorOverlay {
-                anchors.fill: parent
-                source: parent
-                color: theme.imageColor
-            }
-
         }
 
         Label {
@@ -59,7 +52,14 @@ Popup {
             color: theme.fontColor
             font.pixelSize: theme.fontPixelNormal
         }
+    }
 
+    MultiEffect {
+        source: image
+        anchors.fill: image
+        brightness: 1
+        colorization: 1
+        colorizationColor: theme.imageColor
     }
 
     Timer {
@@ -89,5 +89,4 @@ Popup {
         border.color: theme.borderColor
         color: theme.bgColor
     }
-
 }

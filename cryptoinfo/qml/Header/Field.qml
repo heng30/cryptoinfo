@@ -8,7 +8,7 @@ import "qrc:/res/qml/Header/LeftBtnField" as LeftBtnField
 Rectangle {
     id: root
 
-    signal searchEditingFinished()
+    signal searchEditingFinished
 
     width: parent.width
     height: theme.panelHeaderHeight
@@ -34,9 +34,7 @@ Rectangle {
                 checked: !!modelData.checked
                 enableColorOverlay: modelData.enableColorOverlay === undefined ? true : !!modelData.enableColorOverlay
             }
-
         }
-
     }
 
     Shortcut {
@@ -44,7 +42,6 @@ Rectangle {
         onActivated: {
             if (_homeIsChecked)
                 leftPrice.showSearchBar();
-
         }
     }
 
@@ -54,14 +51,10 @@ Rectangle {
         spacing: theme.itemSpacing
         height: parent.height
 
-        Left {
-        }
+        Left {}
 
-        LeftBtnField.Price {
-        }
+        LeftBtnField.Price {}
     }
 
-    Right {
-    }
-
+    Right {}
 }

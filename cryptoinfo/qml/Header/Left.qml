@@ -16,7 +16,7 @@ Row {
             property string tipText: translator.tr("主页")
             property bool visible: true
             property bool checked: _homeIsChecked
-            property var clicked: function() {
+            property var clicked: function () {
                 config.panel_type = PanelType.Price;
             }
         },
@@ -25,7 +25,7 @@ Row {
             property string tipText: translator.tr("工具箱")
             property bool visible: true
             property bool checked: _toolBoxIsChecked
-            property var clicked: function() {
+            property var clicked: function () {
                 config.panel_type = PanelType.ToolBox;
             }
         }
@@ -35,5 +35,4 @@ Row {
         model: parent.imageModel
         delegate: dItem
     }
-
 }

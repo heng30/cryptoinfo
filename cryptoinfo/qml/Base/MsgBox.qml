@@ -1,7 +1,7 @@
 import QtQuick 2.15
 import QtQml 2.15
 import QtQuick.Controls 2.15
-import QtGraphicalEffects 1.15
+import QtQuick.Effects
 import "qrc:/res/qml/Base" as Base
 
 Popup {
@@ -12,7 +12,7 @@ Popup {
 
     function add(msg, isWarnMsg, okCB, cancellCB) {
         if (!okCB && !cancellCB)
-            return ;
+            return;
 
         var item = {
             "msg": msg,
@@ -64,15 +64,15 @@ Popup {
                     anchors.centerIn: parent
                     fillMode: Image.PreserveAspectFit
                     source: msgBox.isWarnMsg ? "qrc:/res/image/warn.png" : "qrc:/res/image/info.png"
-
-                    ColorOverlay {
-                        anchors.fill: parent
-                        source: parent
-                        color: theme.imageColor
-                    }
-
                 }
 
+                MultiEffect {
+                    source: image
+                    anchors.fill: image
+                    brightness: 1
+                    colorization: 1
+                    colorizationColor: theme.imageColor
+                }
             }
 
             Item {
@@ -90,9 +90,7 @@ Popup {
                     color: theme.fontColor
                     font.pixelSize: theme.fontPixelNormal
                 }
-
             }
-
         }
 
         Item {
@@ -106,7 +104,6 @@ Popup {
                 height: 1
                 anchors.centerIn: parent
             }
-
         }
 
         Row {
@@ -149,11 +146,8 @@ Popup {
                     _handleMsg();
                 }
             }
-
         }
-
     }
-
 
     background: Rectangle {
         anchors.fill: parent
@@ -161,5 +155,4 @@ Popup {
         border.color: theme.borderColor
         color: theme.bgColor
     }
-
 }
