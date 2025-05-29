@@ -151,7 +151,7 @@ Popup {
 
     background: Rectangle {
         anchors.fill: parent
-        border.width: 2
+        border.width: theme.borderWidth
         border.color: theme.borderColor
         color: theme.bgColor
     }

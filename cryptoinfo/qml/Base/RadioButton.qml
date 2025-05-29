@@ -25,7 +25,7 @@ RadioButton {
         height: width
         radius: width / 2
         color: "transparent"
-        border.width: 2
+        border.width: theme.borderWidth * 2
         border.color: root.checkedColor
         antialiasing: true
 
@@ -40,7 +40,5 @@ RadioButton {
             color: root.checkedColor
             visible: root.checked
         }
-
     }
-
 }

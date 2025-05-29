@@ -17,7 +17,7 @@ Row {
             property string tipText: translator.tr("设置")
             property bool visible: true
             property bool checked: _settingIsChecked
-            property var clicked: function() {
+            property var clicked: function () {
                 config.panel_type = PanelType.Setting;
             }
         },
@@ -25,7 +25,7 @@ Row {
             property string source: "qrc:/res/image/about.png"
             property string tipText: translator.tr("关于")
             property bool visible: true
-            property var clicked: function() {
+            property var clicked: function () {
                 about.open();
             }
         },
@@ -33,7 +33,7 @@ Row {
             property string source: "qrc:/res/image/theme.png"
             property string tipText: translator.tr("切换主题")
             property bool visible: true
-            property var clicked: function() {
+            property var clicked: function () {
                 config.is_dark_theme = !config.is_dark_theme;
                 config.save_qml();
             }
@@ -42,7 +42,7 @@ Row {
             property string source: "qrc:/res/image/minus.png"
             property string tipText: translator.tr("最小化")
             property bool visible: true
-            property var clicked: function() {
+            property var clicked: function () {
                 main.showMinimized();
             }
         },
@@ -50,7 +50,7 @@ Row {
             property string source: "qrc:/res/image/exit.png"
             property string tipText: translator.tr("关闭")
             property bool visible: true
-            property var clicked: function() {
+            property var clicked: function () {
                 utilityFn.quit();
             }
         }
@@ -60,5 +60,4 @@ Row {
         model: parent.imageModel
         delegate: dItem
     }
-
 }

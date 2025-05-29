@@ -1,15 +1,11 @@
 use crate::config::Config;
-use crate::qobjmgr::{qobj, qobj_mut, NodeType as QNodeType};
-use platform_dirs::AppDirs;
+use crate::qobjmgr::{qobj_mut, NodeType as QNodeType};
 use qmetaobject::*;
 use std::collections::HashMap;
-use std::fs::File;
-use std::io::{self, BufRead};
 
 #[derive(QObject, Default)]
 pub struct Translator {
     base: qt_base_class!(trait QObject),
-    path: String,
     lang_map: HashMap<String, String>,
     use_chinese: qt_property!(bool),
     tr: qt_method!(fn(&mut self, text: QString) -> QString),
@@ -21,39 +17,11 @@ impl Translator {
     }
 
     pub fn init(&mut self) {
-        let app_dirs = qobj::<AppDirs>(QNodeType::AppDir);
         let config = qobj_mut::<Config>(QNodeType::Config);
         self.use_chinese = config.use_chinese;
-        self.path = app_dirs
-            .config_dir
-            .join("translation.dat")
-            .to_str()
-            .unwrap()
-            .to_string();
-        self.load();
-    }
 
-    fn load(&mut self) {
-        if let Ok(file) = File::open(&self.path) {
-            let lines = io::BufReader::new(file).lines();
-            for line in lines {
-                if line.is_err() {
-                    continue;
-                }
-
-                let item = line
-                    .unwrap()
-                    .split(',')
-                    .into_iter()
-                    .map(|s| s.to_string())
-                    .collect::<Vec<String>>();
-
-                if item.len() != 2 {
-                    continue;
-                }
-                self.lang_map.insert(item[0].clone(), item[1].clone());
-            }
-        }
+        // TODO: add translations
+        // self.lang_map.insert();
     }
 
     pub fn tr(&self, text: QString) -> QString {

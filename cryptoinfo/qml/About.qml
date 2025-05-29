@@ -44,7 +44,6 @@ Popup {
                 label.horizontalAlignment: Text.AlignLeft
                 text: "Based on Qt 5.15. Copyright 2022-2030 The Heng30 Company Ltd. All rights reserved. The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE."
             }
-
         }
 
         Item {
@@ -59,16 +58,13 @@ Popup {
                 text: translator.tr("关闭")
                 onClicked: about.visible = false
             }
-
         }
-
     }
 
     background: Rectangle {
         anchors.fill: parent
-        border.width: 2
+        border.width: theme.borderWidth
         border.color: theme.borderColor
         color: theme.bgColor
     }
-
 }

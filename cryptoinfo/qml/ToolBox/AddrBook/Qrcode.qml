@@ -72,22 +72,18 @@ Popup {
                 anchors.fill: parent
                 onClicked: {
                     if (utility.copy_to_clipboard_qml(addrLabel.text))
-                        msgTip.add(translator.tr("复制成功"), false)
+                        msgTip.add(translator.tr("复制成功"), false);
                     else
-                        msgTip.add(translator.tr("复制失败"), false)
-
+                        msgTip.add(translator.tr("复制失败"), false);
                 }
             }
-
         }
-
     }
 
     background: Rectangle {
         anchors.fill: parent
-        border.width: 2
+        border.width: theme.borderWidth
         border.color: theme.borderColor
         color: theme.bgColor
     }
-
 }

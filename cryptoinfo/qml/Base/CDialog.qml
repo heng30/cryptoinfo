@@ -50,7 +50,6 @@ Popup {
                 source: "qrc:/res/image/exit.png"
                 tipText: translator.tr("关闭")
             }
-
         }
 
         Loader {
@@ -60,14 +59,12 @@ Popup {
             height: parent.height - parent.padding - header.height
             sourceComponent: dialog.sourceComponent
         }
-
     }
 
     background: Rectangle {
         anchors.fill: parent
-        border.width: 2
+        border.width: theme.borderWidth
         border.color: theme.borderColor
         color: theme.bgColor
     }
-
 }

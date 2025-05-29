@@ -2,8 +2,6 @@ import QtQuick 2.15
 import QtQuick.Controls 2.15
 import QtQuick.Effects
 
-// import Qt5Compat.QtGraphicalEffects
-
 Rectangle {
     id: root
 
@@ -12,11 +10,12 @@ Rectangle {
     property bool checked: false
     property bool enableColorOverlay: true
     property bool enableMouseArea: true
+    property real iconSize: theme.iconSize
 
     signal clicked(var mouse)
 
-    implicitWidth: 32
-    implicitHeight: 32
+    implicitWidth: iconSize
+    implicitHeight: iconSize
     color: "transparent"
 
     Image {
@@ -32,7 +31,7 @@ Rectangle {
         Rectangle {
             anchors.fill: parent
             color: parent._entered || root.checked ? theme.imageEnteredColor : "transparent"
-            radius: width / 3
+            radius: theme.itemRadius * 2
             opacity: root.checked ? 0.2 : 0.3
         }
     }

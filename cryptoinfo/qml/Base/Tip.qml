@@ -11,7 +11,7 @@ ToolTip {
 
     background: Rectangle {
         color: bgColor
-        border.width: 1
+        border.width: theme.borderWidth
         border.color: borderColor
     }
 
@@ -20,5 +20,4 @@ ToolTip {
         color: root.textColor
         font.pixelSize: root.textFontPixelSize
     }
-
 }

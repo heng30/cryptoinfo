@@ -33,14 +33,27 @@ Popup {
         height: Math.max(image.height, label.height)
         spacing: theme.itemSpacing
 
-        Image {
-            id: image
-
-            width: Math.min(label.height + theme.itemMargins, 32)
+        Item {
+            width: Math.min(label.height + theme.itemMargins, theme.iconSize)
             height: width
-            anchors.verticalCenter: parent.verticalCenter
-            fillMode: Image.PreserveAspectFit
-            source: msgTip.isWarnMsg ? "qrc:/res/image/warn.png" : "qrc:/res/image/info.png"
+
+            Image {
+                id: image
+
+                width: parent.width
+                height: width
+                anchors.verticalCenter: parent.verticalCenter
+                fillMode: Image.PreserveAspectFit
+                source: msgTip.isWarnMsg ? "qrc:/res/image/warn.png" : "qrc:/res/image/info.png"
+            }
+
+            MultiEffect {
+                source: image
+                anchors.fill: image
+                brightness: 1
+                colorization: 1
+                colorizationColor: theme.imageColor
+            }
         }
 
         Label {
@@ -52,14 +65,6 @@ Popup {
             color: theme.fontColor
             font.pixelSize: theme.fontPixelNormal
         }
-    }
-
-    MultiEffect {
-        source: image
-        anchors.fill: image
-        brightness: 1
-        colorization: 1
-        colorizationColor: theme.imageColor
     }
 
     Timer {
@@ -85,7 +90,7 @@ Popup {
 
     background: Rectangle {
         anchors.fill: parent
-        border.width: 2
+        border.width: theme.borderWidth
         border.color: theme.borderColor
         color: theme.bgColor
     }

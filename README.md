@@ -1,21 +1,19 @@
-![cryptoinfo.png](./screenshot/cryptoinfo.png)
+![cryptoinfo](./screenshot/cryptoinfo.png)
 
-[中文文档](./README.zh-CN.md)
+### 功能
+- [x] 数字货币行情
+- [x] 个人工具箱
+- [x] 底部状态栏展示加密相关指数和信息
 
-### Features
-- [x] Cryptocurrency market data
-- [x] Personal toolbox
-- [x] Bottom status bar displaying cryptocurrency-related indices and information
-
-### Compilation Environment
+### 编译环境
 - Linux
-- Qt5.15
+- Qt6
 - Rust
 
-### Compilation && Running
+### 编译 && 运行
 - make
 - make debug
 
-### Reference
+### 参考
 - [Writing a QML Application in Rust](https://dev.to/ayush1325/writing-a-qml-application-in-rust-part-1-3pgi)
 - [qmetaobject-rs](https://github.com/woboq/qmetaobject-rs)

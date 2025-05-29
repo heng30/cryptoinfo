@@ -12,8 +12,8 @@ Row {
     spacing: theme.itemSpacing
     imageModel: [
         QtObject {
-            property string source: "qrc:/res/image/home.png"
-            property string tipText: translator.tr("主页")
+            property string source: "qrc:/res/image/btc.png"
+            property string tipText: translator.tr("行情")
             property bool visible: true
             property bool checked: _homeIsChecked
             property var clicked: function () {

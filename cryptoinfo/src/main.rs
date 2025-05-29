@@ -38,7 +38,7 @@ async fn main() {
     qobjmgr::init_price_addition(&mut engine);
     qobjmgr::init_contract_stats_model(&mut engine);
 
-    engine.load_url(QUrl::from(QString::from("qrc:/res/qml/main.qml")));
+    engine.load_url(QUrl::from(QString::from("qrc:/res/qml/Main.qml")));
     engine.exec();
 
     // 保证UI部分先被析构
