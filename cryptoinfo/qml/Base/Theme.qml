@@ -3,8 +3,8 @@ import QtQuick.Window 2.15
 
 QtObject {
     property bool darkTheme: config.is_dark_theme
-    property color bgColor: darkTheme ? "black" : "white"
-    property color invertBgColor: darkTheme ? "white" : "black"
+    property color bgColor: darkTheme ? "16161A" : "white"
+    property color invertBgColor: darkTheme ? "white" : "16161A"
     property color itemBgColor: darkTheme ? "#444444" : "lightgray"
     property color inputBarBgColor: darkTheme ? "#333333" : "#eeeeee"
     property color scrollBarColor: itemBgColor
@@ -13,8 +13,8 @@ QtObject {
     property color imageColor: fontColor
     property color underFontColor: theme.darkTheme ? Qt.darker("lightgray") : "lightgray"
     property color lineSeriesColor: darkTheme ? Qt.rgba(1, 1, 1, 1) : Qt.rgba(0.0001, 0, 0, 1)
-    property color imageEnteredColor: darkTheme ? "white" : "black"
-    property color windowBorderEnterColor: darkTheme ? "white" : "black"
+    property color imageEnteredColor: darkTheme ? "white" : "16161A"
+    property color windowBorderEnterColor: darkTheme ? "white" : "16161A"
     property color headerBG: darkTheme ? Qt.darker("steelblue") : "steelblue"
     property color itemEnterColor: darkTheme ? "#555555" : "lightgray"
     property color itemEnteredBG: darkTheme ? "#444444" : "lightgray"
